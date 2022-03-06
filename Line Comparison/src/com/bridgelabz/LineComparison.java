@@ -3,27 +3,47 @@ import java.util.Scanner;
 public class LineComparison {
 
 	public static void main(String[] args) {
-		System.out.println("Line Comparison Program");	
-		
 		Scanner obj = new Scanner(System.in);
 		
-	  System.out.println("Enter the value of x1:");
+		System.out.println("Values for Line one ");
+		
+		System.out.println("Enter value for x1 : ");
 		int x1 = obj.nextInt();
-		
-		System.out.println("Enter the value of y1:");
+		System.out.println("Enter value for y1 : ");
 		int y1 = obj.nextInt();
-		
-		System.out.println("Enter the value of x2:");
+		System.out.println("Enter value for x2 : ");
 		int x2 = obj.nextInt();
-		
-		System.out.println("Enter the value of y2:");
+		System.out.println("Enter value for y2 : ");
 		int y2 = obj.nextInt();
+	        
+		System.out.println("Values for Line two ");
 		
+		System.out.println("Enter value for x3 : ");
+		int x3 = obj.nextInt();
+		System.out.println("Enter value for y3 : ");
+		int y3 = obj.nextInt();
+		System.out.println("Enter value for x4 : ");
+		int x4 = obj.nextInt();
+		System.out.println("Enter value for y4 : ");
+		int y4 = obj.nextInt();
+
 		obj.close();
+
+		Double LengthOfLine1 = Math.sqrt( ( x2 - x1 ) * ( x2 - x1 ) + ( y2 - y1 ) * ( y2 - y1 ));
+		System.out.println(" Length of Line is one : "+LengthOfLine1);
+	        
+		Double LengthOfLine2 = Math.sqrt( ( x4 - x3 ) * ( x4 - x3 ) + ( y4 - y3 ) * ( y4 - y3 ));
+		System.out.println(" Length of Line is two : "+LengthOfLine2);
 		
-		double length= Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+		int value = LengthOfLine1.compareTo(LengthOfLine2);
 		
-		System.out.println("Distance Between two points is: " +length);
+		if(value<0) {
+			System.out.println("Line one is Smaller then Line two");
+		}else if(value>0) {
+			System.out.println("Line one is Larger then Line two");
+		}else {
+			System.out.println("Both Lines are equal");
+		}
 	}
 
 }
